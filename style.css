@@ -5,11 +5,26 @@
 }
 
 :root{
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71;
+    --black: #1C1C1C;
+    --blue-panel: #1F2937;
+    --blue-panel--psw: #273549;
+    --white: #FFFFFF;
+    --green--title: #4ADF86;
+    --green--btn: #10B981;
+    --green--psw: #55F991;
     --font-family: 'Arial, sans-serif';
 }
 
 body{
-    background-color: var(--primary-color);
+    background-color: var(--black);
+}
+
+.container{
+   width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: var(--blue-panel);
+    border-radius: 10px;
+    font-family: var(--font-family);
+    color: var(--white);
 }
