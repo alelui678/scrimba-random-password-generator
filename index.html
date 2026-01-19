@@ -20,13 +20,19 @@
         <h2>Generate a</h2>
         <h2 class="color-green">random password</h2>
         <p>Never use an insecure password again.</p>
-        <button class="gen-psw-btn">Generate password</button>
+        <div class="interactive-section">
+            <button class="gen-psw-btn">Generate password</button>
+            <div class="slider-section">
+                <span>Password Length:</span>
+                <span class="slider-label">12</span>
+                <input type="range" min="8" max="20" value="12" class="length-slider">
+            </div>
+
+        </div>
         <hr>
         <div class="psw-container">
-            <div class="psw-box">
-            </div>
-            <div class="psw-box">
-            </div>
+            <div class="psw-box"></div>
+            <div class="psw-box"></div>
         </div>
     </div>
     <script src="main.js"></script>

@@ -20,9 +20,9 @@ body{
 }
 
 .container{
-    max-width: 850px;
+    max-width: 930px;
     margin: 50px auto;
-    padding: 80px;
+    padding: 60px;
     background-color: var(--blue-panel);
     border-radius: 10px;
     color: var(--white);
@@ -51,6 +51,7 @@ p {
 }
 .gen-psw-btn:hover {
     background-color: var(--green--title);
+    color: var(--blue-panel--psw);
 }
 
 hr{
@@ -86,4 +87,24 @@ hr{
 }
 .util-btn[data-copied] {
     color: var(--green--psw);
+}
+
+.interactive-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slider-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type='range'] {
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    accent-color: var(--green--psw);
 }
