@@ -39,7 +39,7 @@ p {
     font-size: 30px;
     margin: 20px 0;
 }
-button {
+.gen-psw-btn {
     background-color: var(--green--btn);
     color: var(--white);
     border: none;
@@ -49,7 +49,7 @@ button {
     font-size: 20px;
     cursor: pointer;
 }
-button:hover {
+.gen-psw-btn:hover {
     background-color: var(--green--title);
 }
 
@@ -78,4 +78,9 @@ hr{
 .psw-text{
     color: var(--green--psw);
     font-size: 25px;
+}
+
+.fa-regular:hover {
+    color: var(--green--psw);
+    cursor: pointer;
 }
