@@ -39,7 +39,7 @@ p {
     font-size: 30px;
     margin: 20px 0;
 }
-button {
+.gen-psw-btn {
     background-color: var(--green--btn);
     color: var(--white);
     border: none;
@@ -49,7 +49,7 @@ button {
     font-size: 20px;
     cursor: pointer;
 }
-button:hover {
+.gen-psw-btn:hover {
     background-color: var(--green--title);
 }
 
@@ -64,15 +64,26 @@ hr{
 
 .psw-box{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 60px;
     background-color: var(--blue-panel--psw);
-    color: var(--green--psw);
     padding: 20px;
     border-radius: 5px;
     margin-top: 30px;
     text-align: center;
+}
+
+.psw-text{
+    color: var(--green--psw);
     font-size: 25px;
+}
+
+.fa-regular:hover {
+    color: var(--green--psw);
+    cursor: pointer;
+}
+.util-btn[data-copied] {
+    color: var(--green--psw);
 }
