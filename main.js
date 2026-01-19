@@ -1,7 +1,9 @@
 const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]","|",":",";","<",">",".","?","/"];
 const pswBoxEls = document.querySelectorAll(".psw-box");
 const generateBtn = document.querySelector("button");
-const pswLength = 15;
+const sliderEl = document.querySelector(".length-slider");
+const sliderLabelEl = document.querySelector(".slider-label");
+let pswLength = 12;
 
 function getRandomPsw() {
     let password = "";
@@ -13,7 +15,7 @@ function getRandomPsw() {
 }
 
 function generatePasswords() {
-    pswBoxEls.forEach((pswBoxEl,index) => {
+    pswBoxEls.forEach(pswBoxEl => {
         //Clear previous content
         pswBoxEl.innerHTML = "";
         //Create and append password text
@@ -24,11 +26,19 @@ function generatePasswords() {
         //Create and append clipboard icon
         const utilBtnEl = document.createElement("span");
         utilBtnEl.classList.add("util-btn");
-        const clipboardIcon = document.createElement("i");
-        clipboardIcon.classList.add("fa-regular", "fa-copy");
-        utilBtnEl.appendChild(clipboardIcon);
+        utilBtnEl.appendChild(createClipboardIcon());
         pswBoxEl.appendChild(utilBtnEl);
     });
+}
+
+function createClipboardIcon() {
+    const clipboardIcon = document.createElement("i");
+    clipboardIcon.classList.add("fa-regular", "fa-copy");
+    return clipboardIcon;
+}
+function resetClipboardIcon(utilBtnEl) {
+    utilBtnEl.innerHTML = "";
+    utilBtnEl.appendChild(createClipboardIcon());
 }
 
 function copyToClipboard(event) {
@@ -42,7 +52,14 @@ function copyToClipboard(event) {
         event.target.innerHTML = "";
         utilBtnEl.textContent = "copied!";
         utilBtnEl.setAttribute("data-copied", "true");
+        //Reset the icon after 3 seconds
+        setTimeout(() => {resetClipboardIcon(utilBtnEl);}, 3000);
     }
+}
+
+function getPswLength() {
+    pswLength = sliderEl.value;
+    sliderLabelEl.textContent = sliderEl.value;
 }
 
 //Event listeners
@@ -52,3 +69,5 @@ generateBtn.addEventListener("click", generatePasswords);
 pswBoxEls.forEach(pswBoxEl => {
     pswBoxEl.addEventListener("click", copyToClipboard);
 });
+
+sliderEl.addEventListener("input", getPswLength);
