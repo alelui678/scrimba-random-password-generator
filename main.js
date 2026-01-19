@@ -28,7 +28,6 @@ function generatePasswords() {
         clipboardIcon.classList.add("fa-regular", "fa-copy");
         utilBtnEl.appendChild(clipboardIcon);
         pswBoxEl.appendChild(utilBtnEl);
-        pswBoxEl.addEventListener("click", copyToClipboard);
     });
 }
 
@@ -46,4 +45,10 @@ function copyToClipboard(event) {
     }
 }
 
+//Event listeners
+//Add click event listener to generate button
 generateBtn.addEventListener("click", generatePasswords);
+//Add click event listener to each password box for copying password
+pswBoxEls.forEach(pswBoxEl => {
+    pswBoxEl.addEventListener("click", copyToClipboard);
+});
