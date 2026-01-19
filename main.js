@@ -42,6 +42,7 @@ function copyToClipboard(event) {
         navigator.clipboard.writeText(pswText);
         event.target.innerHTML = "";
         utilBtnEl.textContent = "copied!";
+        utilBtnEl.setAttribute("data-copied", "true");
     }
 }
 

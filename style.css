@@ -84,3 +84,6 @@ hr{
     color: var(--green--psw);
     cursor: pointer;
 }
+.util-btn[data-copied] {
+    color: var(--green--psw);
+}
